@@ -69,11 +69,10 @@ class SimpleMarkerAnimationExampleState
           .then<int>((value) => value.mapId), //Grab Google Map Id
       //
       markers: <Marker>{
-        RippleMarker(
+        Marker(
           icon: BitmapDescriptor.defaultMarker,
           markerId: MarkerId('MarkerId1'),
           position: LatLng(0, 0),
-          ripple: false,
         )
       },
       //

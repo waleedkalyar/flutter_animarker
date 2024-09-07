@@ -70,10 +70,9 @@ class SimpleMarkerAnimationExampleState
   }
 
   void newLocationUpdate(LatLng latLng) {
-    var marker = RippleMarker(
+    var marker = Marker(
         markerId: kMarkerId,
         position: latLng,
-        ripple: true,
         onTap: () {
           print('Tapped! $latLng');
         });

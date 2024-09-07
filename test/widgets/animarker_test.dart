@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animarker/core/ripple_marker.dart';
 import 'package:flutter_animarker/widgets/animarker.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -23,10 +22,10 @@ void main() {
 
     var markerId = MarkerId('MarkerId1');
     const _kSantoDomingo = CameraPosition(target: position, zoom: 15);
-    var marker = RippleMarker(
+    var marker = Marker(
       markerId: markerId,
       position: position,
-      ripple: true,
+
     );
 
     //Animarker 1

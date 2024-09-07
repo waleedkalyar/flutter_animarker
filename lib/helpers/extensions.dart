@@ -10,7 +10,6 @@ import 'package:vector_math/vector_math.dart';
 
 // Project imports:
 import 'package:flutter_animarker/core/i_lat_lng.dart';
-import 'package:flutter_animarker/core/ripple_marker.dart';
 import 'package:flutter_animarker/helpers/math_util.dart';
 import 'package:flutter_animarker/helpers/spherical_util.dart';
 import 'package:flutter_animarker/models/lat_lng_info.dart';
@@ -67,13 +66,7 @@ extension GoogleMapLatLng on ILatLng {
 
   LatLng get toLatLng => LatLng(latitude, longitude);
 
-  bool get isRipple {
-    if (this is RippleMarker) {
-      return (this as RippleMarker).ripple;
-    } else {
-      return false;
-    }
-  }
+
 
   Vector3 get vector {
     var latRad = latitude * degrees2Radians;
@@ -102,15 +95,9 @@ extension AnimationControllerEx on AnimationController {
 }
 
 extension LatLngEx on Marker {
-  bool get isRipple {
-    if (this is RippleMarker) {
-      return (this as RippleMarker).ripple;
-    } else {
-      return false;
-    }
-  }
 
-  ILatLng get toLatLngInfo => LatLngInfo.marker(this, ripple: isRipple, bearing: rotation);
+
+  ILatLng get toLatLngInfo => LatLngInfo.marker(this,bearing: rotation);
 }
 
 extension TweenEx<T> on Tween<T> {

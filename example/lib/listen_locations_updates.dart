@@ -63,12 +63,11 @@ class _FlutterMapMarkerAnimationExampleState
         .listen((Position p) async {
       setState(() {
         var markerId = MarkerId('MarkerId3');
-        _markers[markerId] = RippleMarker(
+        _markers[markerId] = Marker(
           markerId: markerId,
           icon: pinLocationIcon,
           rotation: 270,
           position: LatLng(p.latitude, p.longitude),
-          ripple: ripple,
         );
       });
 
